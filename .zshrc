@@ -56,6 +56,8 @@ plugins=(git man node npm nvm osx rsync sudo tmux vscode yarn zsh-autosuggestion
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+export EDITOR="vim"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
