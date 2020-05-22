@@ -89,8 +89,6 @@ source $ZSH/oh-my-zsh.sh
 
 setopt HIST_IGNORE_SPACE
 
-#alias mongod="sudo mongod --dbpath=~/Dev/MongoDB/data/db"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
