@@ -54,7 +54,7 @@ plugins=(git man node npm nvm osx rsync sudo tmux vscode yarn zsh-autosuggestion
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
 
 export EDITOR="vim"
 
@@ -88,7 +88,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 setopt HIST_IGNORE_SPACE
-export PATH="/usr/local/sbin:$PATH"
 
 #alias mongod="sudo mongod --dbpath=~/Dev/MongoDB/data/db"
 
