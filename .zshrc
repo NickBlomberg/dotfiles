@@ -96,3 +96,4 @@ export NVM_DIR="$HOME/.nvm"
 alias dotfiles='/usr/bin/git --git-dir=/Users/nick/.dotfiles/ --work-tree=/Users/nick'
 
 source $HOME/.aliases
+source $HOME/.functions
