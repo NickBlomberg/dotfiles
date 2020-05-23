@@ -18,15 +18,12 @@ endif
 
 call plug#begin()
 Plug 'gmarik/Vundle.vim'
-Plug 'bling/vim-airline'
 Plug 'sjl/gundo.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'mhartington/oceanic-next'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'suan/vim-instant-markdown'
 Plug 'tpope/vim-sensible'
 Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 """" Theme """"
@@ -38,14 +35,14 @@ if (has("termguicolors"))
         set termguicolors
 endif
 
+let g:onedark_termcolors = 256
 let g:onedark_terminal_italics = 1
 colorscheme onedark
 
-"""" Airline configuration """"
-set noshowmode " Hide original status bar
-let g:airline_theme='oceanicnext'
-let g:airline_powerline_fonts = 1
-let g:bufferline_echo = 0
+set noshowmode
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
 
 " Clear search highlights with \ <space>
 nnoremap <leader><space> :nohlsearch<CR>
