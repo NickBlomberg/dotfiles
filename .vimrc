@@ -26,6 +26,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'sjl/gundo.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 """""""""""""""
@@ -77,3 +78,6 @@ nnoremap <leader>u :GundoToggle<CR>
 let g:ctrlp_match_window='bottom,order:ttb'
 let g:ctrlp_switch_buffer=0
 let g:ctrlp_working_path_mode=0
+
+" NERDTree
+map <C-o> :NERDTreeToggle<CR>
