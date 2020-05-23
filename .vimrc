@@ -28,6 +28,7 @@ Plug 'sjl/gundo.vim'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 """""""""""""""
@@ -80,3 +81,6 @@ map <C-o> :NERDTreeToggle<CR>
 
 " fzf
 map ; :Files<CR>
+
+" Editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
