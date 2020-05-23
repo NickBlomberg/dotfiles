@@ -5,7 +5,7 @@ set cursorline                  " Highlight the line the cursor is on
 set lazyredraw                  " Prevent unecessary redrawing
 set ttyfast                     " Fast terminal connection
 set showmatch                   " Show matching brackets when one is highlighted
-let mapleader="\<Space>"        " Reassign the leader key
+let mapleader=","               " Reassign the leader key
 set noshowmode                  " Hide the default status line
 
 """""""""""""""""""""""""""
