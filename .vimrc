@@ -26,6 +26,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'suan/vim-instant-markdown'
 Plug 'tpope/vim-sensible'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 """" Theme """"
@@ -37,7 +38,8 @@ if (has("termguicolors"))
         set termguicolors
 endif
 
-colorscheme OceanicNext
+let g:onedark_terminal_italics = 1
+colorscheme onedark
 
 """" Airline configuration """"
 set noshowmode " Hide original status bar
