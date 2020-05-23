@@ -25,8 +25,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'sjl/gundo.vim'
-Plug 'kien/ctrlp.vim'
 Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 """""""""""""""
@@ -74,10 +75,8 @@ inoremap jk <esc>
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 
-" CtrlP settings
-let g:ctrlp_match_window='bottom,order:ttb'
-let g:ctrlp_switch_buffer=0
-let g:ctrlp_working_path_mode=0
-
 " NERDTree
 map <C-o> :NERDTreeToggle<CR>
+
+" fzf
+map ; :Files<CR>
