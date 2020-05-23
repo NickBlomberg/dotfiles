@@ -53,16 +53,32 @@ colorscheme onedark
 
 let g:lightline = {
     \ 'colorscheme': 'onedark',
+    \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+    \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
     \ },
-    \ 'component_function': {
-    \   'gitbranch': 'FugitiveHead'
+    \ 'component': {
+    \   'readonly': '%{&filetype=="help"?"":&readonly?"\ue0a2":""}',
+    \   'modified': '%{&filetype=="help"?"":&modified?"\ue0a0":&modifiable?"":"-"}',
+    \   'gitbranch': '%{LightlineFugitive()}'
+    \ },
+    \ 'component_visible_condition': {
+    \   'readonly': '(&filetype!="help"&& &readonly)',
+    \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+    \   'gitbranch': 'LightlineFugitive() != ""'
     \ },
     \ }
-let g:lightline.separator = { 'left': '', 'right': '' }
-let g:lightline.subseparator = { 'left': '', 'right': '' }
+
+function! LightlineFugitive()
+  if (exists('*FugitiveHead'))
+    let branch = FugitiveHead()
+    return branch !=# '' ? ' '.branch : ''
+  else
+    return ''
+  endif
+endfunction
 
 " Clear search highlights with <space> <space>
 nnoremap <leader><space> :nohlsearch<CR>
