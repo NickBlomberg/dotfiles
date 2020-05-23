@@ -1,15 +1,18 @@
 set nocompatible
-filetype off
-set tabstop=4
-set softtabstop=4
-set expandtab
-set cursorline		" Highlight the line the cursor is on
-set lazyredraw		" Prevent unecessary redrawing
-set showmatch		"Show matching brackets when one is highlighted
-set relativenumber
-let mapleader = "\<Space>"
+set tabstop=4                   " Width of hard tapstop
+set expandtab                   " Insert spaces whenever tab is pressed
+set cursorline                  " Highlight the line the cursor is on
+set lazyredraw                  " Prevent unecessary redrawing
+set ttyfast                     " Fast terminal connection
+set showmatch                   " Show matching brackets when one is highlighted
+let mapleader="\<Space>"        " Reassign the leader key
+set noshowmode                  " Hide the default status line
 
-" Install Plug when not present
+"""""""""""""""""""""""""""
+""" Plug Plugin Manager """
+"""""""""""""""""""""""""""
+
+" Install if not present
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -17,51 +20,52 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
-Plug 'gmarik/Vundle.vim'
-Plug 'sjl/gundo.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'suan/vim-instant-markdown'
 Plug 'tpope/vim-sensible'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'sjl/gundo.vim'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
+"""""""""""""""
 """" Theme """"
+"""""""""""""""
 
-set t_Co=256
 set background=dark
+set t_Co=256
 
 if (has("termguicolors"))
-        set termguicolors
+    set termguicolors
 endif
 
-let g:onedark_termcolors = 256
-let g:onedark_terminal_italics = 1
-let g:onedark_hide_endofbuffer = 1
+let g:onedark_terminal_italics=1
+let g:onedark_hide_endofbuffer=1
 colorscheme onedark
 
-set noshowmode
+"""""""""""""""""
+""" Lightline """
+"""""""""""""""""
+
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
+    \ 'colorscheme': 'onedark',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'FugitiveHead'
+    \ },
+    \ }
 let g:lightline.separator = { 'left': '', 'right': '' }
 let g:lightline.subseparator = { 'left': '', 'right': '' }
 
-" Clear search highlights with \ <space>
+" Clear search highlights with <space> <space>
 nnoremap <leader><space> :nohlsearch<CR>
 
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
-
 
 " Typing jk in insert mode escapes
 inoremap jk <esc>
@@ -70,8 +74,6 @@ inoremap jk <esc>
 nnoremap <leader>u :GundoToggle<CR>
 
 " CtrlP settings
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-
-au BufRead,BufNewFile *.md set filetype=markdown
+let g:ctrlp_match_window='bottom,order:ttb'
+let g:ctrlp_switch_buffer=0
+let g:ctrlp_working_path_mode=0
