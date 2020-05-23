@@ -9,27 +9,23 @@ set showmatch		"Show matching brackets when one is highlighted
 set relativenumber
 let mapleader = "\<Space>"
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Install Plug when not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-"""" Plugins """"
-
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'bling/vim-airline'
-
-Plugin 'sjl/gundo.vim'
-
-Plugin 'kien/ctrlp.vim'
-
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'mhartington/oceanic-next'
-
-Plugin 'vim-airline/vim-airline-themes'
-
-Plugin 'suan/vim-instant-markdown'
-
-call vundle#end()  
+call plug#begin()
+Plug 'gmarik/Vundle.vim'
+Plug 'bling/vim-airline'
+Plug 'sjl/gundo.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'mhartington/oceanic-next'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'suan/vim-instant-markdown'
+call plug#end()
 
 """" Theme """"
 
