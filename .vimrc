@@ -25,13 +25,13 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'suan/vim-instant-markdown'
+Plug 'tpope/vim-sensible'
 call plug#end()
 
 """" Theme """"
 
 set t_Co=256
 set background=dark
-syntax enable
 
 if (has("termguicolors"))
         set termguicolors
@@ -39,20 +39,11 @@ endif
 
 colorscheme OceanicNext
 
-filetype plugin indent on
-
 """" Airline configuration """"
-set noshowmode				" Hide original status bar
-set ttimeoutlen=50			" Prevents delay when switching modes
-set laststatus=2
+set noshowmode " Hide original status bar
 let g:airline_theme='oceanicnext'
 let g:airline_powerline_fonts = 1
 let g:bufferline_echo = 0
-
-
-""" Search improvements
-set incsearch "Search while typing
-set hlsearch "highlight matches
 
 " Clear search highlights with \ <space>
 nnoremap <leader><space> :nohlsearch<CR>
