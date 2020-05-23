@@ -24,6 +24,7 @@ Plug 'suan/vim-instant-markdown'
 Plug 'tpope/vim-sensible'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 """" Theme """"
@@ -37,12 +38,22 @@ endif
 
 let g:onedark_termcolors = 256
 let g:onedark_terminal_italics = 1
+let g:onedark_hide_endofbuffer = 1
 colorscheme onedark
 
 set noshowmode
 let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
+      \ 'colorscheme': 'onedark',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+let g:lightline.separator = { 'left': '', 'right': '' }
+let g:lightline.subseparator = { 'left': '', 'right': '' }
 
 " Clear search highlights with \ <space>
 nnoremap <leader><space> :nohlsearch<CR>
