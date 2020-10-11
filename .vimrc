@@ -45,14 +45,14 @@ endif
 
 let g:onedark_terminal_italics=1
 let g:onedark_hide_endofbuffer=1
-colorscheme onedark
+colorscheme default
 
 """""""""""""""""
 """ Lightline """
 """""""""""""""""
 
 let g:lightline = {
-    \ 'colorscheme': 'onedark',
+    \ 'colorscheme': 'simpleblack',
     \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
     \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
     \ 'active': {
