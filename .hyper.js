@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 15,
 
     // font family with optional fallbacks
-    fontFamily: '"Fira Mono for Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Cascadia Code", "Fira Mono for Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -148,8 +148,10 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-	'hypercwd',
-	'hyper-chesterish',
+    'hypercwd',
+    "hyper-snazzy",
+    "hyperlinks",
+    "hyperterm-paste"
   ],
 
   // in development, you can create a directory under
