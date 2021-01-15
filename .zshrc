@@ -63,11 +63,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-
-autoload -U promptinit; promptinit
-PURE_CMD_MAX_EXEC_TIME=60
-prompt pure
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -79,11 +74,13 @@ prompt pure
 
 setopt HIST_IGNORE_SPACE
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 alias dotfiles='/usr/bin/git --git-dir=/Users/nick/.dotfiles/ --work-tree=/Users/nick'
+
+
+eval "$(starship init zsh)"
 
 source $HOME/.aliases
 source $HOME/.functions
