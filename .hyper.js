@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 15,
+    fontSize: 17,
 
     // font family with optional fallbacks
     fontFamily: '"Cascadia Code", "Fira Mono for Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -147,12 +147,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [
-    'hypercwd',
-    "hyper-snazzy",
-    "hyperlinks",
-    "hyperterm-paste"
-  ],
+  plugins: ['hypercwd', "hyperlinks", "hyperterm-paste", "hyper-snazzy"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
