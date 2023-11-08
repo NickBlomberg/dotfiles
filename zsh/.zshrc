@@ -1,7 +1,5 @@
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
-export TERMINAL="iterm2"
-export BROWSER="firefox"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
 export BAT_THEME="Dracula"
 export CLICOLOR=1
@@ -22,12 +20,6 @@ alias cat="bat"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
-
-# Show/hide hidden files in Finder
-if [[ $(uname) == "Darwin" ]]; then
-  alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-  alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-fi
 
 # Create a new directory and enter it
 function mkd() {
@@ -53,7 +45,16 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 autoload -Uz compinit && compinit
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ $(uname) == "Darwin" ]]; then
+  export TERMINAL="iterm2"
+  export BROWSER="firefox"
+
+  # Show/hide hidden files in Finder
+  alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+  alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
