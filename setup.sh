@@ -30,6 +30,11 @@ if [[ ! -e ~/.zsh/zsh-autosuggestions ]]; then
   source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+# Install Powerlevel10k
+if [[ ! -e ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme ]]; then
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
+fi
+
 #Install NVIM Plug manager
 if [[ ! -e ~/.config/nvim/autoload/plug.vim ]]; then
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
