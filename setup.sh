@@ -11,6 +11,7 @@ if ! [ -x "$(command -v stow)" ]; then
 fi
 
 # Stow dotfiles
+stow alacritty
 stow git
 stow hushlogin
 stow nvim
