@@ -32,8 +32,8 @@ if [[ ! -e ~/.zsh/zsh-autosuggestions ]]; then
 fi
 
 # Install Powerlevel10k
-if [[ ! -e ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme ]]; then
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
+if [[ ! -e ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme ]]; then
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/powerlevel10k
 fi
 
 #Install NVIM Plug manager

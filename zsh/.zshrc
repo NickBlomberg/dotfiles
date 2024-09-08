@@ -83,7 +83,7 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # -------------------------------- Sourcing --------------------------------
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
