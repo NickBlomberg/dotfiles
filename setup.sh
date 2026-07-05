@@ -16,7 +16,6 @@ stow git
 stow hushlogin
 stow nvim
 stow ssh
-stow vim
 stow zsh
 stow tmux
 
