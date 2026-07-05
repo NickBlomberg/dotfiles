@@ -15,10 +15,4 @@ chezmoi init --apply --ssh NickBlomberg/dotfiles
 
 ## Plugins
 
-ZSH plugins (syntax-highlighting, autosuggestions, powerlevel10k) and TPM are installed automatically on first `chezmoi apply` via `run_once_` scripts.
-
-Neovim plugins (vim-plug) are still installed by `setup.sh` — run once from the source directory (`chezmoi cd`) until the lazy.nvim migration retires it:
-
-```
-./setup.sh
-```
+ZSH plugins (syntax-highlighting, autosuggestions, powerlevel10k), TPM, and Neovim plugins (vim-plug) are all installed automatically on first `chezmoi apply` via `run_once_` scripts.
