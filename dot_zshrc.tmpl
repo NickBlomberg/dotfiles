@@ -88,11 +88,9 @@ setopt hist_find_no_dups
 source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-if [[ $(uname) == "Darwin" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
+{{ if eq .chezmoi.os "darwin" }}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{ end }}
 source <(fzf --zsh)
 
 # --------------------------------Functions---------------------------------
@@ -104,16 +102,15 @@ nas-copy() {
 # ------------------------------- Completion -------------------------------
 autoload -Uz compinit
 compinit
-
-if [[ $(uname) == "Darwin" ]]; then
-  # Show/hide hidden files in Finder
-  alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-  alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-fi
-
+{{ if eq .chezmoi.os "darwin" }}
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+{{ end }}
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+{{ if eq .chezmoi.os "darwin" }}
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/nick/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+{{ end -}}
