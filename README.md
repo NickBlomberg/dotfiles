@@ -13,9 +13,11 @@ Managed with [chezmoi](https://www.chezmoi.io/). The `.ssh/config` is age-encryp
 chezmoi init --apply --ssh NickBlomberg/dotfiles
 ```
 
-## Shell/tmux/nvim plugins (interim)
+## Plugins
 
-Until plugin installation is converted to chezmoi `run_once_` scripts, run once from the source directory (`chezmoi cd`):
+ZSH plugins (syntax-highlighting, autosuggestions, powerlevel10k) and TPM are installed automatically on first `chezmoi apply` via `run_once_` scripts.
+
+Neovim plugins (vim-plug) are still installed by `setup.sh` — run once from the source directory (`chezmoi cd`) until the lazy.nvim migration retires it:
 
 ```
 ./setup.sh
