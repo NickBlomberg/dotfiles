@@ -1,6 +1,8 @@
 set nocompatible
-set tabstop=4                   " Width of hard tapstop
+set tabstop=4 softtabstop=4     " Width of hard tapstop
+set shiftwidth=4
 set expandtab                   " Insert spaces whenever tab is pressed
+set smartindent
 set cursorline                  " Highlight the line the cursor is on
 set lazyredraw                  " Prevent unecessary redrawing
 set ttyfast                     " Fast terminal connection
@@ -22,6 +24,7 @@ endif
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'joshdick/onedark.vim'
+Plug 'ayu-theme/ayu-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'sjl/gundo.vim'
@@ -43,9 +46,10 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-let g:onedark_terminal_italics=1
-let g:onedark_hide_endofbuffer=1
-colorscheme default
+" let g:onedark_terminal_italics=1
+" let g:onedark_hide_endofbuffer=1
+colorscheme ayu
+let ayucolor="mirage"
 
 """""""""""""""""
 """ Lightline """
