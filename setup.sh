@@ -18,6 +18,7 @@ stow nvim
 stow ssh
 stow vim
 stow zsh
+stow tmux
 
 # Add ZSH Syntax Highliting plugin
 if [[ ! -e ~/.zsh/zsh-syntax-highlighting ]]; then
@@ -34,6 +35,11 @@ fi
 # Install Powerlevel10k
 if [[ ! -e ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme ]]; then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/powerlevel10k
+fi
+
+# Install Tmux Plugin Manager
+if [[ ! -e ~/.tmux/plugins/tpm ]]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 #Install NVIM Plug manager
