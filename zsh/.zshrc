@@ -69,6 +69,8 @@ alias gd="git diff"
 alias gdca="git diff --cached"
 alias gp="git push"
 
+alias yt="yt-dlp"
+
 # --------------------------------- History --------------------------------
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
@@ -93,6 +95,12 @@ fi
 
 source <(fzf --zsh)
 
+# --------------------------------Functions---------------------------------
+nas-copy() {
+  rsync -av --progress "$1" nick@annapurna:"$2"
+}
+# Usage: nas-copy ~/Music/Album /music/
+
 # ------------------------------- Completion -------------------------------
 autoload -Uz compinit
 compinit
@@ -105,3 +113,7 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/nick/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
