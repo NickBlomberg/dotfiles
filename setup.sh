@@ -11,7 +11,6 @@ if ! [ -x "$(command -v stow)" ]; then
 fi
 
 # Stow dotfiles (interim: ssh only, until it is converted to chezmoi)
-stow nvim
 stow ssh
 
 # Add ZSH Syntax Highliting plugin
