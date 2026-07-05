@@ -10,13 +10,9 @@ if ! [ -x "$(command -v stow)" ]; then
   exit 1
 fi
 
-# Stow dotfiles
-stow git
-stow hushlogin
+# Stow dotfiles (interim: ssh only, until it is converted to chezmoi)
 stow nvim
 stow ssh
-stow zsh
-stow tmux
 
 # Add ZSH Syntax Highliting plugin
 if [[ ! -e ~/.zsh/zsh-syntax-highlighting ]]; then
